@@ -80,7 +80,6 @@ public class Village {
 		}
 		
 		private String afficherMarche() {
-			int nbretalrestant;
 			StringBuilder retour=new StringBuilder();
 			for (int i=0; i<nbEtal;i++) {
 				if (tab[i].isEtalOccupe()==true) {
