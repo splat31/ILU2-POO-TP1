@@ -40,6 +40,7 @@ public class Village {
 				String produit, int nbProduit) {
 			tab[indiceEtal].occuperEtal(vendeur,produit,nbProduit);
 		}
+		
 		int trouverEtalLibre() {
 			for (int i=0; i<tab.length;i++) {
 				if (tab[i].isEtalOccupe()==false) {
@@ -77,14 +78,19 @@ public class Village {
 			}
 			return null;
 		}
+		
 		private String afficherMarche() {
-			String retour="\n";
+			int nbretalrestant;
+			StringBuilder retour=new StringBuilder();
 			for (int i=0; i<nbEtal;i++) {
 				if (tab[i].isEtalOccupe()==true) {
-					retour = retour +"\n" + tab[i].getVendeur() +" vend " ;
+					retour.append(tab[i].afficherEtal());
 				}
 			}
-			return "";
+			if (trouverEtalLibre()!=0) {
+				retour.append("Il reste "+trouverEtalLibre()+" étals non utilisés dans le marché.\n");
+			}
+			return retour.toString();
 		}
 	}
 
