@@ -16,7 +16,13 @@ public class Etal {
 	public Gaulois getVendeur() {
 		return vendeur;
 	}
-
+	
+	private static class Marche{
+		private int nbMarcheMax;
+		private Etal[] tab = new Etal[nbMarcheMax];
+		//tab[0] = new Etal[...];
+	}
+	
 	public void occuperEtal(Gaulois vendeur, String produit, int quantite) {
 		this.vendeur = vendeur;
 		this.produit = produit;
